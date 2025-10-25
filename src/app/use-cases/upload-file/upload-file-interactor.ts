@@ -13,6 +13,7 @@ export class UploadFileInteractor implements UploadFileInputBoundary {
   ) {}
 
   async upload(data: UploadFileInputData): Promise<void> {
+    console.log('[INTERACTOR]', data);
     const isSuccess = await this.dataAccess.save(data.file);
     console.log('[INTERACTOR]', isSuccess);
     if (!isSuccess) {
