@@ -15,7 +15,7 @@ export class UploadFile {
   readonly fileName = signal<string>('');
 
   constructor() {
-    this.#presenter.register(this.upaloaded.bind(this));
+    this.#presenter.subscribe(this.uploaded.bind(this));
   }
 
   upload(event: Event): void {
@@ -23,7 +23,7 @@ export class UploadFile {
     this.#controller.upload(file);
   }
 
-  protected upaloaded(data: UploadFileViewModel): void {
+  protected uploaded(data: UploadFileViewModel): void {
     this.fileName.set(data.fileName);
   }
 }

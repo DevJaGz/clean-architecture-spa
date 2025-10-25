@@ -8,7 +8,7 @@ export class UploadFileService implements UploadFileDataAccess {
   save(file: File): Promise<boolean> {
     return new Promise((resolve) => {
       setTimeout(() => {
-        console.log(`File "${file.name}" saved successfully from DATA ACCESS.`);
+        console.log(`[DATA ACCESS] File "${file.name}" saved successfully from DATA ACCESS.`);
         resolve(true);
       }, 1000);
     });

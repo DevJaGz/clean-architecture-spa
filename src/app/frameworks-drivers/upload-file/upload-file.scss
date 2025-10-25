@@ -1,66 +1,40 @@
-.container {
-  height: 300px;
-  width: 300px;
-  border-radius: 10px;
-  box-shadow: 4px 4px 30px rgba(0, 0, 0, .2);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  gap: 5px;
-  background-color: rgba(0, 110, 255, 0.041);
-}
-
-.header {
-  flex: 1;
-  width: 100%;
-  border: 2px dashed royalblue;
-  border-radius: 10px;
+.file-upload-form {
+  width: fit-content;
+  height: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
 }
-
-.header svg {
-  height: 100px;
-}
-
-.header p {
-  text-align: center;
-  color: black;
-}
-
-.footer {
-  background-color: rgba(0, 110, 255, 0.075);
-  width: 100%;
-  height: 40px;
-  padding: 8px;
-  border-radius: 10px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  color: black;
-  border: none;
-}
-
-.footer svg {
-  height: 130%;
-  fill: royalblue;
-  background-color: rgba(70, 66, 66, 0.103);
-  border-radius: 50%;
-  padding: 2px;
-  cursor: pointer;
-  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.205);
-}
-
-.footer p {
-  flex: 1;
-  text-align: center;
-}
-
-#file {
+.file-upload-label input {
   display: none;
+}
+.file-upload-label svg {
+  height: 50px;
+  fill: rgb(82, 82, 82);
+  margin-bottom: 20px;
+}
+.file-upload-label {
+  cursor: pointer;
+  background-color: #ddd;
+  padding: 30px 70px;
+  border-radius: 40px;
+  border: 2px dashed rgb(82, 82, 82);
+  box-shadow: 0px 0px 200px -50px rgba(0, 0, 0, 0.719);
+}
+.file-upload-design {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.browse-button {
+  background-color: rgb(82, 82, 82);
+  padding: 5px 15px;
+  border-radius: 10px;
+  color: white;
+  transition: all 0.3s;
+}
+.browse-button:hover {
+  background-color: rgb(14, 14, 14);
 }

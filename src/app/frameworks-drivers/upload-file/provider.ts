@@ -18,7 +18,7 @@ export const provideUploadFile = (): Provider => {
     },
     {
       provide: UploadFileOutputBoundary,
-      useClass: UploadFilePresenter,
+      useExisting: UploadFilePresenter,
     },
     {
       provide: UploadFileInputBoundary,

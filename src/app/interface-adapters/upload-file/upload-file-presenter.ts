@@ -8,13 +8,14 @@ export class UploadFilePresenter implements UploadFileOutputBoundary {
   readonly #viewModel: UploadFileViewModel = {
     fileName: '',
   };
-  readonly #callbacks: Array<(data: UploadFileViewModel) => void> = [];
+  readonly #subscribers: Array<(data: UploadFileViewModel) => void> = [];
 
-  register(callback: (data: UploadFileViewModel) => void): void {
-    this.#callbacks.push(callback);
+  subscribe(callback: (data: UploadFileViewModel) => void): void {
+    this.#subscribers.push(callback);
   }
 
   uploaded(data: UploadFileOutputData): void {
+    console.log('[PRESENTER]', data);
     if (data.success && data.file) {
       this.#viewModel.fileName = data.file.name;
       this.notify();
@@ -22,7 +23,7 @@ export class UploadFilePresenter implements UploadFileOutputBoundary {
   }
 
   protected notify(): void {
-    for (const callback of this.#callbacks) {
+    for (const callback of this.#subscribers) {
       callback(this.#viewModel);
     }
   }
